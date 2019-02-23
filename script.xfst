@@ -1,0 +1,28 @@
+clear stack
+
+! Vokaalit ja konsonantit Suomen kielessä
+define Vowel    a | o | u | ä | ö | y | e | i ;
+define Con      b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ;
+
+! Umpitavut; lähteet: http://scripta.kotus.fi/visk/sisallys.php?p=11 
+define Umpitavu      Con Vowel Con | Con Vowel Con Con | Con Vowel Vowel Con |
+                     Vowel Con | Vowel Con Con | Vowel Vowel Con ;
+! Avotavut; 
+define Avotavu     Con Vowel | Vowel | Vowel Vowel | Con Vowel Vowel ;
+
+! Verbit päättyvät avotavuun
+define FinVerb      [ [Avotavu] | [Umpitavu] ]+ Avotavu ;
+
+
+
+
+
+! Translate 'ity'	    to 'itet' when followed by a word boundary, marked as .#.
+define YToEt    i t y -> i t e t || _ .#. ;
+
+! Convert English 'c' to 'k' when followed by another letter than 'e' or 'i'.
+! The backslash \ means "any other symbol than".
+define CToK     c -> k || _ \[ e | i ] ;
+
+! Compose the rules together; now the translation guesser is ready:
+regex EngWord .o. YToEt .o. CToK ;
