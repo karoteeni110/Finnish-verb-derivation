@@ -34,14 +34,3 @@ define VKanta       A -> 0 || Vowel _ .#. ;
 ! suut-ahta- < suuttu‑
 define 
 
-
-
-! Translate 'ity'	    to 'itet' when followed by a word boundary, marked as .#.
-! define YToEt    i t y -> i t e t || _ .#. ;
-
-! Convert English 'c' to 'k' when followed by another letter than 'e' or 'i'.
-! The backslash \ means "any other symbol than".
-! define CToK     c -> k || _ \[ e | i ] ;
-
-! Compose the rules together; now the translation guesser is ready:
-! regex EngWord .o. YToEt .o. CToK ;

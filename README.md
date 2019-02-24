@@ -1,6 +1,9 @@
 # Finnish-verb-derivation
 My final project for LDA-T3101 Computation morphology (2019)
 
+# How to use
+
+
 # My plan
 To build a guesser that derives a new verb with a meaning label(output) from the input verb (input). That is, to illustrate the verb stem's verb derivation.
 
@@ -35,9 +38,15 @@ The label tells on the meaning of the derivational change, which is named by the
 # Summary
 The rules perform the derivation changes below ([Verbinjohtimia, verbikantaisia](http://materiaalit.internetix.fi/fi/opintojaksot/8kieletkirjallisuus/aidinkieli/kielioppi/53sanojen_johtaminen)):
 
-- AhtA momentaaninen eli äkillinen, esim. hauk+ahta-, ist+ahta-, kieh+ahta-, tip+ahta-, väs+ähtä- 
-- Aise momentaaninen, esim. niel+aise-, pes+aise-, tek+aise-, pyyhk+äise 
-- ele, ile frekventatiivinen eli toistuva, esim. aj+ele-, heitt+ele-, kaipa+ile-, kerä+ile- 
-- skele frekventatiivinen, esim. ammu+skele-, etsi+skele-, pure+skele- 
-- ttA kausatiivinen, esim. ammu+tta-, eksy+ttä-, kaiva+tta-, tee+ttä- 
-- UtU refleksiivinen, translatiivinen, esim. ava+utu-, elä+yty-, hake+utu-, laske+utu-, uskalta+utu- 
+- AhtA 
+    momentaaninen eli äkillinen, esim. hauk+ahta-, ist+ahta-, kieh+ahta-, tip+ahta-, väs+ähtä- 
+- Aise 
+    momentaaninen, esim. niel+aise-, pes+aise-, tek+aise-, pyyhk+äise 
+- ele, ile 
+    frekventatiivinen eli toistuva, esim. aj+ele-, heitt+ele-, kaipa+ile-, kerä+ile- 
+- skele 
+    frekventatiivinen, esim. ammu+skele-, etsi+skele-, pure+skele- 
+- ttA 
+    kausatiivinen, esim. ammu+tta-, eksy+ttä-, kaiva+tta-, tee+ttä- 
+- UtU 
+    refleksiivinen, translatiivinen, esim. ava+utu-, elä+yty-, hake+utu-, laske+utu-, uskalta+utu- 
