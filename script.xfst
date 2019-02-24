@@ -6,7 +6,7 @@ define Con      b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | 
 define As       a | ä ;
 define Us       u | y ;
 
-read lexc ????.lexc
+read lexc Derivation.lexc
 define Lexicon
 regex Lexicon
 
@@ -19,11 +19,14 @@ define Avotavu     Con Vowel | Vowel | Vowel Vowel | Con Vowel Vowel ;
 ! Viimeinen avotavu
 define LoppuAvotavu     Con As | As | As As | Con As As ;
 
-! Verbit päättyvät avotavuun
-define FinVerb      [ [Avotavu] | [Umpitavu] ]+ LoppuAvotavu ;
+! Verbit päättyvät avotavuun    
+define FinVerb      [ [Avotavu] | [Umpitavu] ]^<3 LoppuAvotavu ; ! Tavua on 1/2/3
 
-!!!!!!!!!!!!!!! Kanta 1
-! Vokaali vartalo: lukea => luke-, antaa => anta- ; 
+!!!!!
+!!!!!!!!!!!!!!! KANTA
+!!!!!
+
+! -Ahta-
 define VKanta       A -> 0 || Vowel _ .#. ; 
 
 ! Konsonannin vartalo: tulla => tul 

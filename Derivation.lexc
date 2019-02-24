@@ -1,51 +1,68 @@
 Multichar_Symbols
-        Ahta-   Aise-   ele-    ile-    skele-  ttA-    UtU-
+        +Momen
+        +Frek
+        +Kausa
+        +Refle
+        ^GUESSVERBROOT
 
 LEXICON     Root
-0           InfToNoA ;
-0           InfToNoTa ;
-0           InfConGrad ;
+0           Infinitive
 
 !!!!!! Stem !!!!!!!!!!
-LEXICON         InfWithNoA 
-lukea:luke      Derivation
-suttua:suttu    Derivation
-puhua:puhu      Derivation
-kiehua:kiehu    Derivation
-pyrkiä:pyrki    Derivation
-väsyä:väsy      Derivation
-häiritä:häirit  Derivation
+LEXICON         Infinitive 
+seisoa:seis      Derivation ; ! O-vartalo, ~~o~~; 
+toivoa:toiv      Derivation ; ! ??? 1. A->0 || O _ .#., 2. O -> 0 || _ .#.; 
+                              ! o A ->0 || _ .#.
 
-LEXICON         InfToNoTa
-ilmaista:ilmais Derivation
-jylistä:jylis   Derivation 
+suttua:suttu    Derivation ; ! U-vartalo, ~~u~~; 
+puhua:puhu      Derivation ; ! ??? 1. A->0 || U _ .#., 2. U -> 0 || _ .#.
+kiehua:kiehu    Derivation ; ! u a -> 0 || _ .#.
+väsyä:väsy      Derivation ; 
 
-LEXICON         InfConGrad
-naukata:naukka  Derivation
-ryypätä:ryyppä  Derivation
-leipätä:leippä  Derivation
+pyrkiä:pyrk    Derivation ; ! I-vartalo, ~~i~~; 
+                            ! ??? 1. A->0 || i _ .#., 2. i -> 0 || _ .#.
+                            ! i A ->0 || _ .#. 
+
+häiritä:häiri  Derivation ; ! itse-verbi, ~~tse~~ 
+merkitä:merki  Derivation ; ! 1. itA->itse || _.#., 2. tse -> 0 ||
+                            ! itA -> i || _ .#.
+tilkitä:tilk   Derivation ; ! EXCEPTION: ~~itse~~
+
+ilmaista:ilma Derivation ; ! ise-vartalo, ~~ise~~   
+jylistä:jyl   Derivation ; ! ista -> 0 || _ .#.
+
+^GUESSVERBROOT  Derivateion ; ! placeholder
+
+!!!!!!!!! trashbin
+! naukata:nauk  Derivation ; ! AA-vartalo, naukkailla, naukua, naukaista
+! ryypätä:ryyp  Derivation ; ! ryypiskellä
+! leipätä:leip  Derivation ; ! non-exist
+!!!!!!!!! 
 
 !!!! Derivation !!!!
 LEXICON         Derivation
-                Ahta
-                Aise
+                Ahta ;
+                Aise ;
+                Ele ;
+                Skele ;
+                Tta ;
+                UtU ;
 
 LEXICON         Ahta
-AhtA-           # ;
++Momen:-AhtA-           # ; ! 
 
 LEXICON         Aise
-Aise-           # ;
++Momen:-Aise-           # ;
 
 LEXICON         Ele
-ele-            # ;
-ile-            # ;
++Frek:-ele-            # ;
++Frek:-ile-            # ;
 
 LEXICON         Skele
-skele-          # ;
++Frek:-skele-          # ;
 
 LEXICON         Tta
-ttA             # ;
++Kausa:-ttA-            # ;
 
 LEXICON         UtU
-UtU             # ; 
-
++Refle:-UtU-            # ; 
