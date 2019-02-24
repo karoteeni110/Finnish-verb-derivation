@@ -21,12 +21,12 @@ define LoppuAvotavu     Con As | As | As As | Con As As ;
 ! Verbit päättyvät avotavuun
 define FinVerb      [ [Avotavu] | [Umpitavu] ]+ LoppuAvotavu ;
 
-!!!!!!!!!!!!!!! Sanasta saa "kanta" 
-! Vokaali vartalo: lukea => luke
+!!!!!!!!!!!!!!! Kanta 1
+! Vokaali vartalo: lukea => luke-, antaa => anta- ; 
 define VKanta       A -> 0 || Vowel _ .#. ; 
 
 ! Konsonannin vartalo: tulla => tul 
-define Ckanta       Con A -> 0 || [Umpitavu | Avotavu] _ .#. ;
+! define Ckanta       Con A -> 0 || [Umpitavu | Avotavu] _ .#. ;
 
 !!!!!!!!!!!!!! maybe use a lexc to deal with them.........
 
