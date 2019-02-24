@@ -40,24 +40,36 @@ The rules perform the derivation changes below ([Verbinjohtimia, verbikantaisia]
 
 - AhtA 
 
-    momentaaninen eli äkillinen, esim. hauk+ahta-, ist+ahta-, kieh+ahta-, tip+ahta-, väs+ähtä- 
+    momentaaninen eli äkillinen
+    
+    esim. hauk+ahta-, ist+ahta-, kieh+ahta-, tip+ahta-, väs+ähtä- 
 
 - Aise 
 
-    momentaaninen, esim. niel+aise-, pes+aise-, tek+aise-, pyyhk+äise 
+    momentaaninen
+    
+    esim. niel+aise-, pes+aise-, tek+aise-, pyyhk+äise 
 
 - ele, ile 
 
-    frekventatiivinen eli toistuva, esim. aj+ele-, heitt+ele-, kaipa+ile-, kerä+ile- 
+    frekventatiivinen eli toistuva
+    
+    esim. aj+ele-, heitt+ele-, kaipa+ile-, kerä+ile- 
 
 - skele 
 
-    frekventatiivinen, esim. ammu+skele-, etsi+skele-, pure+skele- 
+    frekventatiivinen
+    
+    esim. ammu+skele-, etsi+skele-, pure+skele- 
 
 - ttA 
 
-    kausatiivinen, esim. ammu+tta-, eksy+ttä-, kaiva+tta-, tee+ttä- 
+    kausatiivinen
+    
+    esim. ammu+tta-, eksy+ttä-, kaiva+tta-, tee+ttä- 
 
 - UtU 
 
-    refleksiivinen, translatiivinen, esim. ava+utu-, elä+yty-, hake+utu-, laske+utu-, uskalta+utu- 
+    refleksiivinen, translatiivinen
+    
+    esim. ava+utu-, elä+yty-, hake+utu-, laske+utu-, uskalta+utu- 
