@@ -1,6 +1,5 @@
 Multichar_Symbols
-
-
+        Ahta-   Aise-   ele-    ile-    skele-  ttA-    UtU-
 
 LEXICON     Root
 0           InfToNoA ;
@@ -9,22 +8,44 @@ LEXICON     Root
 
 !!!!!! Stem !!!!!!!!!!
 LEXICON         InfWithNoA 
-lukea:luke  
-suttua:suttu
-puhua:puhu
-pyrkiä:pyrki
-häiritä:häirit
+lukea:luke      Derivation
+suttua:suttu    Derivation
+puhua:puhu      Derivation
+kiehua:kiehu    Derivation
+pyrkiä:pyrki    Derivation
+väsyä:väsy      Derivation
+häiritä:häirit  Derivation
 
 LEXICON         InfToNoTa
-ilmaista:ilmais
-jylistä:jylis
+ilmaista:ilmais Derivation
+jylistä:jylis   Derivation 
 
 LEXICON         InfConGrad
-naukata:naukka
-ryypätä:ryyppä
-leipätä:leippä
+naukata:naukka  Derivation
+ryypätä:ryyppä  Derivation
+leipätä:leippä  Derivation
 
 !!!! Derivation !!!!
-LEXICON         JOHDIN1
-UttA            JOHDIN1 ;
-UttA            # ;
+LEXICON         Derivation
+                Ahta
+                Aise
+
+LEXICON         Ahta
+AhtA-           # ;
+
+LEXICON         Aise
+Aise-           # ;
+
+LEXICON         Ele
+ele-            # ;
+ile-            # ;
+
+LEXICON         Skele
+skele-          # ;
+
+LEXICON         Tta
+ttA             # ;
+
+LEXICON         UtU
+UtU             # ; 
+

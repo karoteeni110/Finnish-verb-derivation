@@ -4,6 +4,7 @@ clear stack
 define Vowel    a | o | u | ä | ö | y | e | i ;
 define Con      b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ;
 define As       a | ä ;
+define Us       u | y ;
 
 read lexc ????.lexc
 define Lexicon
@@ -30,7 +31,6 @@ define VKanta       A -> 0 || Vowel _ .#. ;
 
 !!!!!!!!!!!!!! maybe use a lexc to deal with them.........
 
-! 2-tav. U-vartalot
-! suut-ahta- < suuttu‑
-define 
+! Momentaanijohtimista
+define MomentU      
 

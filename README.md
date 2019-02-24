@@ -22,15 +22,22 @@ Unfortunately the output is not guaranteed to be "correct", since the derivation
 - Filter for non-verbs
     By ruling out those which do not end with a/ä.
 
-## Conjugate to the stem form
+## Conjugate to a first stem form
 - 
 There are 8 types of stems: [§ 61 Taivutuksen ja johtamisen vertailua](http://scripta.kotus.fi/visk/sisallys.php?p=61), from which I give the rules:
 
 
-## Add derivational suffixes
+## Conjugate to a second stem form according to derivational suffixes and attach suffixes
 The derivational change happens at most three times (as _laih-du-t-el-la_ is attached with triple morphemes _tU-ttA-ele_.)
 
 The verb is still in stem form after this rule.
+
+### -Ahta- (Momental)
+
+Three-syllable (*_matkustahtaa_, *_kiristäistä_) and two-syllable derivated verb stems cannot be derivated to momental verbs ([§ 368 Momentaanijohtimista](http://scripta.kotus.fi/visk/sisallys.php?p=368)).
+
+- U-vartalot (e.g. puhu-, kiehu-, väsy-); stems containing one- or two- syllables.
+    > define MomentU            Us -> Us Ahta%- || _ .#.
 
 ## Label the derivation
 The label tells on the meaning of the derivational change, which is named by the meaning groups it belongs to ([Verbijohdosten merkitysryhmiä](https://fl.finnlectura.fi/verkkosuomi/Morfologia/sivu2723.htm)). The number and order of labels depend on the derivation occurences.
