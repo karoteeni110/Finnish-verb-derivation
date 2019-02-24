@@ -3,6 +3,11 @@ clear stack
 ! Vokaalit ja konsonantit Suomen kielessä
 define Vowel    a | o | u | ä | ö | y | e | i ;
 define Con      b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ;
+define As       a | ä ;
+
+read lexc ????.lexc
+define Lexicon
+regex Lexicon
 
 ! Umpitavut; lähteet: http://scripta.kotus.fi/visk/sisallys.php?p=11 
 define Umpitavu      Con Vowel Con | Con Vowel Con Con | Con Vowel Vowel Con |
@@ -10,19 +15,33 @@ define Umpitavu      Con Vowel Con | Con Vowel Con Con | Con Vowel Vowel Con |
 ! Avotavut; 
 define Avotavu     Con Vowel | Vowel | Vowel Vowel | Con Vowel Vowel ;
 
+! Viimeinen avotavu
+define LoppuAvotavu     Con As | As | As As | Con As As ;
+
 ! Verbit päättyvät avotavuun
-define FinVerb      [ [Avotavu] | [Umpitavu] ]+ Avotavu ;
+define FinVerb      [ [Avotavu] | [Umpitavu] ]+ LoppuAvotavu ;
 
+!!!!!!!!!!!!!!! Sanasta saa "kanta" 
+! Vokaali vartalo: lukea => luke
+define VKanta       A -> 0 || Vowel _ .#. ; 
 
+! Konsonannin vartalo: tulla => tul 
+define Ckanta       Con A -> 0 || [Umpitavu | Avotavu] _ .#. ;
+
+!!!!!!!!!!!!!! maybe use a lexc to deal with them.........
+
+! 2-tav. U-vartalot
+! suut-ahta- < suuttu‑
+define 
 
 
 
 ! Translate 'ity'	    to 'itet' when followed by a word boundary, marked as .#.
-define YToEt    i t y -> i t e t || _ .#. ;
+! define YToEt    i t y -> i t e t || _ .#. ;
 
 ! Convert English 'c' to 'k' when followed by another letter than 'e' or 'i'.
 ! The backslash \ means "any other symbol than".
-define CToK     c -> k || _ \[ e | i ] ;
+! define CToK     c -> k || _ \[ e | i ] ;
 
 ! Compose the rules together; now the translation guesser is ready:
-regex EngWord .o. YToEt .o. CToK ;
+! regex EngWord .o. YToEt .o. CToK ;
