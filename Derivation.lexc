@@ -1,35 +1,32 @@
 Multichar_Symbols
-        +Momen +Frek +Kausa +Refle
+        +MomenAHTA +FrekELE +FrekSKELE +KausaTTA +RefleUTU
         ^GUESSVERBROOT +Verb
 
 LEXICON     Root
-0           Infinitive
+           Infinitive ; 
 
 !!!!!! Stem 
 !!!!!! The xfst rules are draft. Ignore them.
-LEXICON         Infinitive 
-seisoa:seis      Derivation ; ! O-vartalo, ~~o~~; 
-toivoa:toiv      Derivation ; ! ??? 1. A->0 || O _ .#., 2. O -> 0 || _ .#.; 
-                              ! o A ->0 || _ .#.
 
-suttua:suttu    Derivation ; ! U-vartalo, ~~u~~; 
-puhua:puhu      Derivation ; ! ??? 1. A->0 || U _ .#., 2. U -> 0 || _ .#.
-kiehua:kiehu    Derivation ; ! u a -> 0 || _ .#.
-väsyä:väsy      Derivation ; 
+LEXICON Infinitive 
+seisoa:seiso  Derivation ; ! A-vartalo, ~~a~~
+toivoa:toivo  Derivation ; 
 
-pyrkiä:pyrk    Derivation ; ! I-vartalo, ~~i~~; 
-                            ! ??? 1. A->0 || i _ .#., 2. i -> 0 || _ .#.
-                            ! i A ->0 || _ .#. 
+suttua  Derivation ; ! U-vartalo, ~~u~~
+puhua   Derivation ; 
+kiehua  Derivation ; 
+väsyä   Derivation ; 
 
-häiritä:häiri  Derivation ; ! itse-verbi, ~~tse~~ 
-merkitä:merki  Derivation ; ! 1. itA->itse || _.#., 2. tse -> 0 ||
-                            ! itA -> i || _ .#.
-tilkitä:tilk   Derivation ; ! EXCEPTION: ~~itse~~
+pyrkiä  Derivation ; ! I-vartalo, ~~i~~; 
 
-ilmaista:ilma Derivation ; ! ise-vartalo, ~~ise~~   
-jylistä:jyl   Derivation ; ! ista -> 0 || _ .#.
+häiritä Derivation ; ! itse-verbi, ~~tse~~ 
+merkitä Derivation ; 
+tilkitä Derivation ; ! EXCEPTION: ~~itse~~
 
-^GUESSVERBROOT  Derivateion ; ! placeholder
+ilmaista Derivation ; ! ise-vartalo, ~~ise~~   
+jylistä Derivation ; 
+
+! Derivateion ; ! placeholder
 
 !!!!!!!!! trashbin
 ! naukata:nauk  Derivation ; ! AA-vartalo, naukkailla, naukua, naukaista
@@ -38,7 +35,7 @@ jylistä:jyl   Derivation ; ! ista -> 0 || _ .#.
 !!!!!!!!! 
 
 !!!! Derivation !!!!
-LEXICON         Derivation
+LEXICON Derivation
 +Verb:0         Ahta ;
 +Verb:0         Aise ;
 +Verb:0         Ele ;
@@ -46,21 +43,21 @@ LEXICON         Derivation
 +Verb:0         Tta ;
 +Verb:0         UtU ;
 
-LEXICON         Ahta
+LEXICON Ahta
 +MomenAHTA:-AhtA-   # ; ! 
 
-LEXICON         Aise
+LEXICON Aise
 +MomenAISE:-Aise-   # ;
 
-LEXICON         Ele
+LEXICON Ele
 +FrekELE:-ele-     # ;
 +FrekILE:-ile-     # ;
 
-LEXICON         Skele
+LEXICON Skele
 +FrekSKELE:-skele-   # ;
 
-LEXICON         Tta
+LEXICON Tta
 +KausaTTA:-ttA-    # ;
 
-LEXICON         UtU
+LEXICON UtU
 +RefleUTU:-UtU-    # ; 

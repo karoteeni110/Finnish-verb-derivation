@@ -1,9 +1,6 @@
 # Finnish-verb-derivation
 My final project for LDA-T3101 Computation morphology (2019)
 
-# How to use
-
-
 # My plan
 To build a guesser that derives a new verb with a meaning label(output) from the input verb (input). That is, to illustrate the verb stem's verb derivation.
 
@@ -11,7 +8,7 @@ E.g. antaa => antautua<Reflek>
 
 The input verb should be a _perussana_ (Fin. "basic word", i.e. a word that is composed of a single morpheme and have not gone through any derivational change), and the output verb contains a single or a triple derivational morpheme (Fin. johdin; See [§ 306 Yhdistymismahdollisuuksista ja -periaatteista](http://scripta.kotus.fi/visk/sisallys.php?p=306)).
 
-Unfortunately, the output is not guaranteed to be "correct", since the derivational form of the verb could be exist in principle but has not been used in real life (See [§ 158 Monitulkintaisuutta kannan ja johtimen erottamisessa](http://scripta.kotus.fi/visk/sisallys.php?p=158)), and also due to oversimplification.
+Unfortunately, the output is not guaranteed to be correct, since the derivational form of the verb could be exist in principle but has not been used in real life (See [§ 158 Monitulkintaisuutta kannan ja johtimen erottamisessa](http://scripta.kotus.fi/visk/sisallys.php?p=158)), and there might be bugs in the script.
 
 # Structure of the scripts
 
@@ -29,13 +26,13 @@ Below demonstrate the rules of stemming and derivational changes.
 
 ### -Ahta- (Momental)
 
-```
 Three-syllable (*_matkustahtaa_, *_kiristäistä_) and two-syllable derivated verb stems cannot be derivated to momental verbs ([§ 368 Momentaanijohtimista](http://scripta.kotus.fi/visk/sisallys.php?p=368)).
-```
 
 - UtU; A vartalot
-    > define AEtoUtU            a a -> a u t u || _ .#.
-    > define 
+```
+    define AEtoUtU            a a -> a u t u || _ .#.
+    define 
+```
 
 ## Label the derivation
 The label tells on the meaning of the derivational change, which is named by the meaning groups it belongs to ([Verbijohdosten merkitysryhmiä](https://fl.finnlectura.fi/verkkosuomi/Morfologia/sivu2723.htm)). The number and order of labels depend on the derivation occurences.

@@ -3,22 +3,24 @@ clear stack
 ! Vokaalit ja konsonantit Suomen kielessä
 define Vowel    a | o | u | ä | ö | y | e | i ;
 define Con      b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ;
+define AA       ä | a ;
 
 ! Umpitavut; lähteet: http://scripta.kotus.fi/visk/sisallys.php?p=11 
-define Umpitavu      Con Vowel Con | Con Vowel Con Con | Con Vowel Vowel Con |
-                     Vowel Con | Vowel Con Con | Vowel Vowel Con ;
+define Umpitavu      [ Con Vowel Con ] | [Con Vowel Con Con | [ Con Vowel Vowel Con ] | [ Vowel Con ] |
+                     [ Vowel Con Con ] | [ Vowel Vowel Con ] ;
 ! Avotavut; 
-define Avotavu     Con Vowel | Vowel | Vowel Vowel | Con Vowel Vowel ;
+define Avotavu     [ Con Vowel ] | [ Vowel ] | [ Vowel Vowel ] | [ Con Vowel Vowel ] ;
 
 ! Viimeinen avotavu
-define LoppuAvotavu     Con As | As | As As | Con As As ;
+define LoppuAvotavu     [ Con AA ] | [ AA ] | [ AA AA ] | [ Con AA AA ] ;
 
-! Verbit päättyvät avotavuun    
-define FinVerb      [ [Avotavu] | [Umpitavu] ]^<3 LoppuAvotavu + "+Guess":0 ; ! Tavua on 1/2/3
+! Verbi, joka muodostaa 2/3 tavua.
+define FinVerb      [ [Avotavu] | [Umpitavu] ]^<3 [ [ d AA ] | [ AA ] | [ t AA ] | [ l A ] ] ; 
 
-read lexc Derivation.lexc 
-
-substitute defined FinVerb for ^GUESSVERBROOT
+! read lexc Derivation.lexc ;
+! substitute defined FinVerb for ^GUESSVERBROOT ;
+! define Lexicon ;
+! regex Lexicon ;
 
 !!!!!
 !!!!!!!!!!!!!!! KANTA
@@ -26,29 +28,17 @@ substitute defined FinVerb for ^GUESSVERBROOT
 
 ! -UtU-; Vartalonloppuiset A ja e säilyvät UtU-johtimen edellä
 ! kääntää -> kääntä-yty
-define AeJaUtU        [a | ä] -> 0 || [a | ä | e ] _ +Verb +RefleUTU
+define AeJaUtU        [ a | ä ] -> 0 || [ a | ä | e ] _ %+Verb %+RefleUTU ;
 
 ! -AhtA-; Kantavartalon loppu-A ja -e katoavat
 ! antaa -> anta-utua 
-define AeJaAhtA       [ a | ä | e] [a | ä] -> 0 || Vowel _ +Verb +MomenAHTA; 
+define AeJaAhtA       [ a | ä | e ] [ a | ä ] -> 0 || Vowel _ %+Verb %+MomenAHTA ; 
 
 ! -ile-; Vartalonloppuiset A ja e säilyvät ile-verbinjohdinten edellä
 !
-define AeJaIle        [ a | ä | e] [a | ä] -> 0 || Vowel _ +Verb +FrekILE;
-
-
-
+define AeJaIle        [ a | ä | e ] [ a | ä ] -> 0 || Vowel _ %+Verb %+FrekILE ;
 
 ! Momentaanijohtimista
-define MomentU      
+! define MomentU      
 
-
-
-
-
-
-
-
-
-define AllPossibleBerbs ;
-regex AllPossibleBerbs ;
+regex FinVerb .o. AeJaUtU ;
