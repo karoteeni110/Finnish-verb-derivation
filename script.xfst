@@ -3,12 +3,6 @@ clear stack
 ! Vokaalit ja konsonantit Suomen kielessä
 define Vowel    a | o | u | ä | ö | y | e | i ;
 define Con      b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ;
-define As       a | ä ;
-define Us       u | y ;
-
-read lexc Derivation.lexc
-define Lexicon
-regex Lexicon
 
 ! Umpitavut; lähteet: http://scripta.kotus.fi/visk/sisallys.php?p=11 
 define Umpitavu      Con Vowel Con | Con Vowel Con Con | Con Vowel Vowel Con |
@@ -20,20 +14,41 @@ define Avotavu     Con Vowel | Vowel | Vowel Vowel | Con Vowel Vowel ;
 define LoppuAvotavu     Con As | As | As As | Con As As ;
 
 ! Verbit päättyvät avotavuun    
-define FinVerb      [ [Avotavu] | [Umpitavu] ]^<3 LoppuAvotavu ; ! Tavua on 1/2/3
+define FinVerb      [ [Avotavu] | [Umpitavu] ]^<3 LoppuAvotavu + "+Guess":0 ; ! Tavua on 1/2/3
+
+read lexc Derivation.lexc 
+
+substitute defined FinVerb for ^GUESSVERBROOT
 
 !!!!!
 !!!!!!!!!!!!!!! KANTA
 !!!!!
 
-! -Ahta-
-define VKanta       A -> 0 || Vowel _ .#. ; 
+! -UtU-; Vartalonloppuiset A ja e säilyvät UtU-johtimen edellä
+! kääntää -> kääntä-yty
+define AeJaUtU        [a | ä] -> 0 || [a | ä | e ] _ +Verb +RefleUTU
 
-! Konsonannin vartalo: tulla => tul 
-! define Ckanta       Con A -> 0 || [Umpitavu | Avotavu] _ .#. ;
+! -AhtA-; Kantavartalon loppu-A ja -e katoavat
+! antaa -> anta-utua 
+define AeJaAhtA       [ a | ä | e] [a | ä] -> 0 || Vowel _ +Verb +MomenAHTA; 
 
-!!!!!!!!!!!!!! maybe use a lexc to deal with them.........
+! -ile-; Vartalonloppuiset A ja e säilyvät ile-verbinjohdinten edellä
+!
+define AeJaIle        [ a | ä | e] [a | ä] -> 0 || Vowel _ +Verb +FrekILE;
+
+
+
 
 ! Momentaanijohtimista
 define MomentU      
 
+
+
+
+
+
+
+
+
+define AllPossibleBerbs ;
+regex AllPossibleBerbs ;

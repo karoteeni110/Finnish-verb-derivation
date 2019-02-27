@@ -1,14 +1,12 @@
 Multichar_Symbols
-        +Momen
-        +Frek
-        +Kausa
-        +Refle
-        ^GUESSVERBROOT
+        +Momen +Frek +Kausa +Refle
+        ^GUESSVERBROOT +Verb
 
 LEXICON     Root
 0           Infinitive
 
-!!!!!! Stem !!!!!!!!!!
+!!!!!! Stem 
+!!!!!! The xfst rules are draft. Ignore them.
 LEXICON         Infinitive 
 seisoa:seis      Derivation ; ! O-vartalo, ~~o~~; 
 toivoa:toiv      Derivation ; ! ??? 1. A->0 || O _ .#., 2. O -> 0 || _ .#.; 
@@ -41,28 +39,28 @@ jylistä:jyl   Derivation ; ! ista -> 0 || _ .#.
 
 !!!! Derivation !!!!
 LEXICON         Derivation
-                Ahta ;
-                Aise ;
-                Ele ;
-                Skele ;
-                Tta ;
-                UtU ;
++Verb:0         Ahta ;
++Verb:0         Aise ;
++Verb:0         Ele ;
++Verb:0         Skele ;
++Verb:0         Tta ;
++Verb:0         UtU ;
 
 LEXICON         Ahta
-+Momen:-AhtA-           # ; ! 
++MomenAHTA:-AhtA-   # ; ! 
 
 LEXICON         Aise
-+Momen:-Aise-           # ;
++MomenAISE:-Aise-   # ;
 
 LEXICON         Ele
-+Frek:-ele-            # ;
-+Frek:-ile-            # ;
++FrekELE:-ele-     # ;
++FrekILE:-ile-     # ;
 
 LEXICON         Skele
-+Frek:-skele-          # ;
++FrekSKELE:-skele-   # ;
 
 LEXICON         Tta
-+Kausa:-ttA-            # ;
++KausaTTA:-ttA-    # ;
 
 LEXICON         UtU
-+Refle:-UtU-            # ; 
++RefleUTU:-UtU-    # ; 
