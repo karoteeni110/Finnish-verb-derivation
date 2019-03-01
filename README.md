@@ -1,7 +1,5 @@
 # Finnish-verb-derivation
-My final project for LDA-T3101 Computation morphology (2019):
-
-Finnish verb guesser (Alpha testing version 010319)
+Finnish verb guesser (Alpha testing V0.0.1)
 
 # My plan
 The guesser produces all of the possible derivative from the given verb. 
