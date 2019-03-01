@@ -9,10 +9,10 @@ LEXICON     Root
 !!!!!! The xfst rules are draft. Ignore them.
 
 LEXICON Infinitive 
-seisoa  Derivation ; ! A-vartalo, ~~a~~
+seisoa  Derivation ; ! o-vartalo, ~~oa~~
 toivoa  Derivation ; 
 antaa   Derivation ;
-suttua  Derivation ; ! U-vartalo, ~~u~~
+suttua  Derivation ; ! U-vartalo, ~~ua~~
 puhua   Derivation ; 
 kiehua  Derivation ; 
 väsyä   Derivation ; 
@@ -26,7 +26,7 @@ tilkitä Derivation ; ! EXCEPTION: ~~itse~~
 ilmaista Derivation ; ! ise-vartalo, ~~ise~~   
 jylistä Derivation ; 
 
-^GUESSVERB Derivateion ; ! placeholder
+^GUESSVERB Derivation ; ! placeholder
 
 !!!!!!!!! trashbin
 ! naukata:nauk  Derivation ; ! AA-vartalo, naukkailla, naukua, naukaista
