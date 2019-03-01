@@ -4,41 +4,73 @@ clear stack
 define Vowel    a | o | u | ä | ö | y | e | i ;
 define Con      b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ;
 define AA       ä | a ;
+define UU       u | y ;
 
 ! Umpitavut; lähteet: http://scripta.kotus.fi/visk/sisallys.php?p=11 
-define Umpitavu      [ Con Vowel Con ] | [Con Vowel Con Con | [ Con Vowel Vowel Con ] | [ Vowel Con ] |
-                     [ Vowel Con Con ] | [ Vowel Vowel Con ] ;
+define Umpitavu [ Con Vowel Con ] | [ Con Vowel Con Con ] | [ Con Vowel Vowel Con ] |
+                 [ Vowel Con ] | [ Vowel Con Con ] | [ Vowel Vowel Con ] ;
+
 ! Avotavut; 
 define Avotavu     [ Con Vowel ] | [ Vowel ] | [ Vowel Vowel ] | [ Con Vowel Vowel ] ;
 
 ! Viimeinen avotavu
 define LoppuAvotavu     [ Con AA ] | [ AA ] | [ AA AA ] | [ Con AA AA ] ;
 
-! Verbi, joka muodostaa 2/3 tavua.
-define FinVerb      [ [Avotavu] | [Umpitavu] ]^<3 [ [ d AA ] | [ AA ] | [ t AA ] | [ l A ] ] ; 
+! Loosely, we define verbs are words consisting of less than 6 syllables, 
+! with the last one being dA/ A/ tA/ lA. (Should I keep it?)
+define FinVerb      [ [Avotavu] | [Umpitavu] ]^<5 [ [ d AA ] | [ AA ] | [ t AA ] | [ l A ] ] ; 
 
-! read lexc Derivation.lexc ;
-! substitute defined FinVerb for ^GUESSVERBROOT ;
-! define Lexicon ;
-! regex Lexicon ;
+read lexc Derivation.lexc ;
+substitute defined FinVerb for ^GUESSVERB ! ?!?!!?!
+define AllFinVerbs ;
 
 !!!!!
-!!!!!!!!!!!!!!! KANTA
+!!!!! RULES
 !!!!!
 
-! -UtU-; Vartalonloppuiset A ja e säilyvät UtU-johtimen edellä
-! kääntää -> kääntä-yty
-define AeJaUtU        [ a | ä ] -> 0 || [ a | ä | e ] _ %+Verb %+RefleUTU ;
 
-! -AhtA-; Kantavartalon loppu-A ja -e katoavat
-! antaa -> anta-utua 
-define AeJaAhtA       [ a | ä | e ] [ a | ä ] -> 0 || Vowel _ %+Verb %+MomenAHTA ; 
+! Stemming, public rule ; ignore gradation; ignore exceptions like "juosta, mennä"
+define stemI       AA -> 0 || Vowel _ %- ;    ! "antaa > anta-"; V stem
+define stemII      d AA -> 0 || _ %- ;          ! "luoda > luo-"; V stem
+define stemIII     l l AA -> l || _ %- ;         ! "tulla > tul-"; e-stem
+define stemIV      t AA -> 0 || Vowel _ %-  ;    ! "ruveta > ruve"; supistumavartalo
+define stemV       s t AA -> s || _ %-  ;        ! "nousta > nous-"; e-stem
+define stemVI      i t AA -> i || _ %-  ;      ! "merkitä > merkit-"; e-stem
+define Stemming    stemI .o. stemII .o. stemIII .o. stemIV .o. stemV .o. stemVI ; ! Can we do this ???
+
+! gradation
+define WeakNT          n t -> n n || _ AA %- ; ! Problematic
+define StrongKPT        k -> k k , p -> p p , t -> t t || _ AA %- ;
+define Gradation        WeakNT .o. StrongKPT ; 
+
+! -UtU-; kääntä-ytyä > kääntä-ytyä; sopia-utua > sope-utu-a
+! A and e stay in the end of the stem, i turns into e 
+define aeiUtU        Con [ a a ] -> a  , Con [ e e ] -> e , Con [ ä ä ] -> ä , Con i -> e ||  _ %- UU t UU AA ;
+! Exclude ttA-stem; *vahingoitta-utu-a vs. testamentta-utu-a
+! define exUtU        stemI .o.
+!                   [ 0 -> %-NOTPOSSIBLE%- || _ %- UU t UU AA ] ;
+
+! -AhtA- 
+! Drop the last vowel
+define vAhtA       Vowel -> 0 ||  _ %- AA h t AA AA ; 
 
 ! -ile-; Vartalonloppuiset A ja e säilyvät ile-verbinjohdinten edellä
 !
-define AeJaIle        [ a | ä | e ] [ a | ä ] -> 0 || Vowel _ %+Verb %+FrekILE ;
+define AeIle        AA -> 0 , i -> e, e e -> e , o o -> o, i i -> i, u u -> u, y y -> y ||  _ %- i l l AA ;
 
-! Momentaanijohtimista
-! define MomentU      
+! -skele-
+define Skele        [ a -> i || _ %- s k e l a ] ! Problematic
+                    .o. [ a -> e ||  _ %- s k e l e ] ;
 
-regex FinVerb .o. AeJaUtU ;
+! -tta-
+! -aise-
+
+!       
+
+define VokaalisoituOne   A -> a, U -> u || $[ a | o | u ] _ ; ! Don't have compounds
+define VokaalisoituTwo   A -> ä, U -> y ;
+define CleafOffdash      %- -> 0 ;
+
+regex AllFinVerbs .o. VokaalisoituOne .o. VokaalisoituTwo  
+                  .o. Stemming .o. Gradation .o. aeiUtU .o. vAhtA .o. AeIle
+                  .o. CleafOffdash ;

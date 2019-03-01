@@ -1,6 +1,6 @@
 Multichar_Symbols
         +MomenAHTA +FrekELE +FrekSKELE +KausaTTA +RefleUTU
-        ^GUESSVERBROOT +Verb
+        ^GUESSVERB +Verb
 
 LEXICON     Root
            Infinitive ; 
@@ -9,9 +9,9 @@ LEXICON     Root
 !!!!!! The xfst rules are draft. Ignore them.
 
 LEXICON Infinitive 
-seisoa:seiso  Derivation ; ! A-vartalo, ~~a~~
-toivoa:toivo  Derivation ; 
-
+seisoa  Derivation ; ! A-vartalo, ~~a~~
+toivoa  Derivation ; 
+antaa   Derivation ;
 suttua  Derivation ; ! U-vartalo, ~~u~~
 puhua   Derivation ; 
 kiehua  Derivation ; 
@@ -26,7 +26,7 @@ tilkitä Derivation ; ! EXCEPTION: ~~itse~~
 ilmaista Derivation ; ! ise-vartalo, ~~ise~~   
 jylistä Derivation ; 
 
-! Derivateion ; ! placeholder
+^GUESSVERB Derivateion ; ! placeholder
 
 !!!!!!!!! trashbin
 ! naukata:nauk  Derivation ; ! AA-vartalo, naukkailla, naukua, naukaista
@@ -36,28 +36,28 @@ jylistä Derivation ;
 
 !!!! Derivation !!!!
 LEXICON Derivation
-+Verb:0         Ahta ;
-+Verb:0         Aise ;
-+Verb:0         Ele ;
-+Verb:0         Skele ;
-+Verb:0         Tta ;
-+Verb:0         UtU ;
+:         Ahta ;
+:         Aise ;
+:         Ele ;
+:         Skele ;
+:         Tta ;
+:         UtU ;
 
 LEXICON Ahta
-+MomenAHTA:-AhtA-   # ; ! 
+:-AhtAA   # ; ! 
 
 LEXICON Aise
-+MomenAISE:-Aise-   # ;
+:-AistAA   # ;
 
 LEXICON Ele
-+FrekELE:-ele-     # ;
-+FrekILE:-ile-     # ;
+:-ellA     # ;
+:-illA     # ;
 
 LEXICON Skele
-+FrekSKELE:-skele-   # ;
+:-skellA   # ;
 
 LEXICON Tta
-+KausaTTA:-ttA-    # ;
+:-ttAA    # ;
 
 LEXICON UtU
-+RefleUTU:-UtU-    # ; 
+:-UtUA    # ; 
