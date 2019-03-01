@@ -40,7 +40,7 @@ define Stemming    stemI .o. stemII .o. stemIII .o. stemIV .o. stemV .o. stemVI 
 
 ! gradation
 define WeakNT          n t -> n n || _ AA %- ; ! Problematic
-define StrongKPT        k -> k k , p -> p p , t -> t t || _ AA %- ;
+define StrongKPT        k -> k k , p -> p p , t -> t t || Vowel _ AA %- ;
 define Gradation        StrongKPT ; 
 
 ! -UtU-; kääntä-ytyä > kääntä-ytyä; sopia-utua > sope-utu-a
