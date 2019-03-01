@@ -46,9 +46,13 @@ define Gradation        WeakNT .o. StrongKPT ;
 ! -UtU-; kääntä-ytyä > kääntä-ytyä; sopia-utua > sope-utu-a
 ! A and e stay in the end of the stem, i turns into e 
 define aeiUtU        Con [ a a ] -> a  , Con [ e e ] -> e , Con [ ä ä ] -> ä , Con i -> e ||  _ %- UU t UU AA ;
+
+!!!!!!!!!
 ! Exclude ttA-stem; *vahingoitta-utu-a vs. testamentta-utu-a
 ! define exUtU        stemI .o.
 !                   [ 0 -> %-NOTPOSSIBLE%- || _ %- UU t UU AA ] ;
+!!!!!!!!!
+
 
 ! -AhtA- 
 ! Drop the last vowel
@@ -56,7 +60,8 @@ define vAhtA       Vowel -> 0 ||  _ %- AA h t AA AA ;
 
 ! -ile-; Vartalonloppuiset A ja e säilyvät ile-verbinjohdinten edellä
 !
-define AeIle        AA -> 0 , i -> e, e e -> e , o o -> o, i i -> i, u u -> u, y y -> y ||  _ %- i l l AA ;
+define AeIle        AA -> 0 , i -> e, e e -> e , o o -> o, 
+                    i i -> i, u u -> u, y y -> y ||  _ %- i l l AA ;
 
 ! -skele-
 define Skele        [ a -> i || _ %- s k e l a ] ! Problematic
@@ -71,6 +76,6 @@ define VokaalisoituOne   A -> a, U -> u || $[ a | o | u ] _ ; ! Don't have compo
 define VokaalisoituTwo   A -> ä, U -> y ;
 define CleafOffdash      %- -> 0 ;
 
-regex AllFinVerbs .o. VokaalisoituOne .o. VokaalisoituTwo  
-                  .o. Stemming .o. Gradation .o. aeiUtU .o. vAhtA .o. AeIle
+regex AllFinVerbs .o. VokaalisoituOne .o. VokaalisoituTwo .o. Stemming .o. Gradation 
+                  .o. aeiUtU .o. vAhtA .o. AeIle ! Add suffixes here
                   .o. CleafOffdash ;
