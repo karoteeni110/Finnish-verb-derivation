@@ -28,6 +28,34 @@ define AllFinVerbs ;
 !!!!! RULES
 !!!!!
 
+! Mark the grade of stem according to the suffix
+! Partly adapted from Gradation.script (Karttunen, 2004) and ASTEVAIHTELUTYYPIT (KOTUS 2018)
+define weakMark    k -> "^WK^", p -> "^WP^", t -> "^WT^" || _ Vowel AA %- [ AA h t AA | s k e l e | t t AA ] ; 
+                        ! Weak mark for Type 1 verbs
+                        ! antaa > ant^Weak^aa-AhtA
+define weakK        "^WK^" -> j || r _ e          ! kulje-
+                        .o.
+                    "^WK^" -> g || n _            ! tunge-
+                        .o.
+                    "^WK^" -> k || Con/k _           ! k stays when proceeded by any consonant that is not a "k"
+                        .o.
+                    "^WK" -> 0 ;                    ! hae-
+define weakP        "^WP^" -> m || m _              ! emmi-
+                        .o.
+                    "^WP^" -> 0 || p _              ! hypi-
+                        .o.
+                    "^WP^" -> v ;                  ! viivy-
+
+define WeakT        "^WT^" -> n || n _              ! myönnä-
+                        .o.
+                    "^WT^" -> l || l _              ! yllä-
+                        .o.
+                    "^WT" -> r || r _               ! kerro-
+                        .o.
+                    "^WT^" -> 0 || t _              ! saata-
+                        .o.
+                    "^WT^" -> d ;              ! pidä-
+define WeakGrade    weakMark .o. weakK .o. weakP .o. weakT ;
 
 ! Stemming without gradation;
 ! This is a set of public rules and is applied to all of the verbs;
@@ -39,11 +67,6 @@ define stemIV      t AA -> 0 || Vowel _ %-  ;    ! "ruveta > ruve"; supistumavar
 define stemV       s t AA -> s || _ %-  ;        ! "nousta > nous-"; e-stem
 define stemVI      i t AA -> i || _ %-  ;      ! "merkitä > merkit-"; e-stem
 define Stemming    stemI .o. stemII .o. stemIII .o. stemIV .o. stemV .o. stemVI ; !
-
-! Gradation should be combined with suffixes. These rules are commentted out, and are kept for copy-paste.
-! define WeakNT          n t -> n n || _ AA %- ; ! Problematic
-! define StrongKPT        k -> k k , p -> p p , t -> t t || Vowel _ AA %- ;
-! define Gradation        StrongKPT ; 
 
 ! -UtU-; kääntä-ytyä > kääntä-ytyä; sopia-utua > sope-utu-a
 ! A and e stay in the end of the stem, i turns into e 
@@ -74,10 +97,10 @@ define Skele        [ a -> i || _ %- s k e l a ] ! Problematic
 
 !       
 
-define VokaalisoituOne   A -> a, U -> u || $[ a | o | u ] _ ; ! Don't have compounds
+define VokaalisoituOne   A -> a, U -> u || $[ a | o | u ] _ ; ! No need to consider compounds
 define VokaalisoituTwo   A -> ä, U -> y ;
 define CleafOffdash      %- -> 0 ;
 
-regex AllFinVerbs .o. VokaalisoituOne .o. VokaalisoituTwo .o. Stemming
+regex AllFinVerbs .o. VokaalisoituOne .o. VokaalisoituTwo .o. WeakGrade .o. Stemming
                   .o. aeiUtU .o. vAhtA .o. AeIle ! Add suffixes here
                   .o. CleafOffdash ;

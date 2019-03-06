@@ -10,13 +10,17 @@ E.g.
 
 input:
 
-> hfst[1]: down antaa  
+```
+hfst[1]: down antaa  
+```
 
 The output should be:
 
-> antautua
-> annella
-> anniskella
+```
+antautua
+annella
+anniskella
+```
 
 The input verb should be a "basic word" (Fin. _perussana_), i.e. a word that is composed of a single morpheme and have not gone through any derivational change. The output verb is designated to go through one derivational change (Fin. johdin; See [VISK § 306](http://scripta.kotus.fi/visk/sisallys.php?p=306), so they would contain only two morphemes.
 
@@ -24,13 +28,13 @@ Unfortunately, this version (010319) yields disappointing results. The derivatio
 
 ## Structure
 
-The lexc script has put several toy words, and added all the five suffixes to them. For example, the lower word for "antaa" are "antaa-AhtAA", "antaa-AistAA", "antaa-ellA", "antaa-illA", "antaa-skellA", "antaa-ttAA" and "antaa-UtUA". This is a simplification; not all of the suffixes 
+The lexc script has put several toy words, and added all the five suffixes to them. For example, the lower word for "antaa" are "antaa-AhtAA", "antaa-AistAA", "antaa-ellA", "antaa-illA", "antaa-skellA", "antaa-ttAA" and "antaa-UtUA". This is a simplification; as is mentioned above, not all of those forms exist in real life.
 
 ! "-ellA" / "-illA" state is problematic.
 
 ### Filter the input
 
-- Accept Finnish word
+1. Accept Finnish word
 
 Ruling out impossible syllable combinations:
 
@@ -53,7 +57,7 @@ define LoppuAvotavu     [ Con AA ] | [ AA ] | [ AA AA ] | [ Con AA AA ] ;
 
 ```
 
-- Filter out non-verbs
+2. Filter out non-verbs
 
 Ruling out those which do not end with a/ä:
 
@@ -71,9 +75,14 @@ The Vowel Harmony in the suffix.
 
 Rules are composed before stemming, since words like "seisoa" turning into "seis" would effect on the vowel choice.
 
+```
+define VokaalisoituOne   A -> a, U -> u || $[ a | o | u ] _ ; ! We don't consider compounds
+define VokaalisoituTwo   A -> ä, U -> y ;
+```
+
 ### Stemming
 
-- Ignored exceptions like "juosta, mennä":
+These rules transform the inputs into a rough stem form. Only the  Here the exceptions like "juosta, mennä" are ignored:
 
 ```
 
@@ -85,21 +94,14 @@ Rules are composed before stemming, since words like "seisoa" turning into "seis
 ! define stemVI      i t AA -> i || _ %-        ! "merkitä > merkit-"; e-stem
 ```
 
-- A simple gradation:
+Since grade of the stem depends on the specific suffix, the gradation would be corporated in the conjugation rules.
 
-```
-
-! gradation
-define WeakNT          n t -> n n || _ AA %- ; ! Problematic
-define StrongKPT        k -> k k , p -> p p , t -> t t || _ AA %- ;
-define Gradation        WeakNT .o. StrongKPT ; 
-```
 
 ### Conjugate to the stem form according to derivational suffixes
 
 Derivational suffixes includes -Ahta-, -Aise-, -ele- or -ile-, -skele-, -UtU-. Each lexeme would be conjugated to a specific stem form to adapt the suffix ([Vesa 2006](http://materiaalit.internetix.fi/fi/opintojaksot/8kieletkirjallisuus/aidinkieli/kielioppi/53sanojen_johtaminen)).
 
-Below demonstrate the rules of stemming and derivational changes.
+Below demonstrates the rules of stemming and derivational changes.
 
 ### -UtU-
 
@@ -152,11 +154,15 @@ Very unpredictive.
 
 ### -Aise-
 
+Follows strong graded vowel stems that are made of two syllables.
+
 [VISK § 370](http://scripta.kotus.fi/visk/sisallys.php?p=370)
 
 TBD
 
 ### -ttA-
+
+Follows weak graded vowel stems.
 
 [VISK § 320](http://scripta.kotus.fi/visk/sisallys.php?p=320)
 

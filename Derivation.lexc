@@ -1,6 +1,6 @@
 Multichar_Symbols
         +MomenAHTA +FrekELE +FrekSKELE +KausaTTA +RefleUTU
-        ^GUESSVERB +Verb
+        ^GUESSVERB +Verb ^WK^ ^WT^ ^WP^
 
 LEXICON     Root
            Infinitive ; 
