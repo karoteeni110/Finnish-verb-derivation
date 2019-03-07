@@ -93,7 +93,7 @@ define ILE        AA -> 0 , i -> e, e e -> e , o o -> o,
 define SKELE        a -> [ e | i ] || _  %- s k e l l AA ; ! Not predictable              
 
 ! -tta-
-define TTA          a -> o, ä -> [e | ä] || _  %- t t AA AA ; ! Not predictable
+define TTA          a -> [o | a], ä -> [e | ä] || _  %- t t AA AA ; ! Not predictable
 
 ! -aise-
 ! Drop all of the short vowels, and long vowels at the end of the type 4 and 6 verb roots 

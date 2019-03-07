@@ -22,9 +22,19 @@ anniskella
 
 The input verb should be a "basic word" (Fin. _perussana_), i.e. a word that is composed of a single morpheme and have not gone through any derivational change. The output verb is designated to go through one derivational change (Fin. johdin [VISK § 306](http://scripta.kotus.fi/visk/sisallys.php?p=306)), so they would contain only two morphemes.
 
-Unfortunately, this version (010319) yields disappointing results. The derivational forms it yields could exist in principle, but has not been used in real life ([VISK § 158](http://scripta.kotus.fi/visk/sisallys.php?p=158)), and there are bugs in the script :( 
+Unfortunately, this version (010319) yields disappointing results. The derivational forms it yields could exist in principle, but has not been used in real life ([VISK § 158](http://scripta.kotus.fi/visk/sisallys.php?p=158)), and there are bugs in the script :( . So the output for the verb _antaa_ is in in fact:
+
+```
+annahtaa
+annattaa
+anneskella
+anniskella
+annottaa
+antaista
+antautua
+```
     
-It seems an analyzer is more realistic.
+Therefore, the "correct" set of verbs is the subset of the output verbs.
 
 ## Structure
 
