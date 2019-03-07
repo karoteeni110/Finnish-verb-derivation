@@ -36,6 +36,38 @@ antautua
     
 Therefore, the "correct" set of verbs is the subset of the output verbs.
 
+## How to use
+
+The script is used in hfst-xfst program. For example if we input _kertoa_ :
+
+```
+$ hfst-xfst
+hfst[0] source script.xfst
+ Defined
+ 'Vowel'
+ ... 
+ ... # long compiling message
+ ...
+hfst[1]: down kertoa
+kerdahtaa
+kerdoskella
+kerdottaa
+kertaista
+kertoutua
+hfst[1]:
+```
+
+One can use the _Derivation.lexc_ file by follwing steps:
+1. Add the list to the Infinitive LEXICON.
+2. Comment out the placeholder substitution:
+
+```
+read lexc Derivation.lexc ;
+! substitute defined FinVerb for ^GUESSVERB 
+define AllFinVerbs ;
+```
+3. After recompiling script.xfst, use the command _lower-words_.
+
 ## Structure
 
 The lexc script contains several toy words, which are typical in terms of consonant gradation, and are attached with all the five suffixes. For example, the lower word for "antaa" are "antaa-AhtAA", "antaa-AistAA", "antaa-ellA", "antaa-illA", "antaa-skellA", "antaa-ttAA" and "antaa-UtUA". This is a simplification; as is mentioned above, not all of those forms exist in real life.
