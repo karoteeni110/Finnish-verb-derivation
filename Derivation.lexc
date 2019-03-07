@@ -27,7 +27,7 @@ väsyä   Derivation ;
 ! yltää   Derivation ;
 ! kertoa  Derivation ;
 ! saattaa Derivation ;
-! pitää   Derivation ;
+pitää   Derivation ;
 
 pyrkiä  Derivation ; ! I-vartalo, ~~i~~; 
 
@@ -59,7 +59,7 @@ LEXICON Ahta
 :-AhtAA   # ; ! 
 
 LEXICON Aise
-:-AistAA   # ;
+:-AistA   # ;
 
 LEXICON Ile
 :-illA     # ;

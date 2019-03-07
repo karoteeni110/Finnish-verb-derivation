@@ -46,7 +46,7 @@ define weakP        "^WP^" -> m || m _              ! emmi-AhtA
                         .o.
                     "^WP^" -> v ;                  ! viivy-AhtA
 
-define WeakT        [ "^WT^" -> n || n _ ]           ! myönnä-AhtA
+define weakT        [ "^WT^" -> n || n _ ]           ! myönnä-AhtA
                         .o.
                     [ "^WT^" -> l || l _ ]         ! yllä-AhtA
                         .o.
@@ -55,49 +55,49 @@ define WeakT        [ "^WT^" -> n || n _ ]           ! myönnä-AhtA
                     [ "^WT^" -> 0 || t _ ]             ! saata-AhtA
                         .o.
                      [ "^WT^" -> d ];              ! pidä-AhtA
-define WeakGrade    weakMark .o. weakK .o. weakP ;! .o. weakT ;
+define weakGrade    weakMark .o. weakK .o. weakP .o. weakT ;
 
-! Strong gradation for type 4 and type 6
+! Strong gradation for type 4 and 6
 ! Applicable for -ttA, -Aise, and -ile suffixes
-define strongGrade   k -> k k , p -> p p, t -> t t, n g -> n k, m m -> m p,
-                    v -> p, d -> t, 0 -> k, h j -> h k || Vowel _ Vowel [ t t AA AA | AA i s t AA | i l l AA] ;
+define strongGrade   k -> k k , p -> p p, t -> t t, n g -> n k, 
+                    v -> p, d -> t , 0 -> ( k ) , m m -> m p,
+                    h j -> h k || Vowel _ Vowel t AA %- [ t t AA AA | AA i s t AA | i l l AA | UU t UU AA ] ;
 
-define Gradation WeakGrade .o. strongGrade ;
+define Gradation weakGrade .o. strongGrade ;
 
 ! Stemming without gradation;
 ! This is a set of public rules and is applied to all of the verbs;
-! Ignored exceptions like "juosta, mennä"
-define stemI       AA -> 0 || Vowel _ %- ;    ! "antaa > anta-"; V stem
-define stemII      d AA -> 0 || _ %- ;          ! "luoda > luo-"; V stem
-define stemIII     l l AA -> l || _ %- ;         ! "tulla > tul-"; e-stem
-define stemIV      t AA -> 0 || Vowel _ %-  ;    ! "ruveta > ruve"; supistumavartalo
-define stemV       s t AA -> s || _ %-  ;        ! "nousta > nous-"; e-stem
-define stemVI      i t AA -> i || _ %-  ;      ! "merkitä > merki-"; e-stem
-define Stemming    stemI .o. stemII .o. stemIII .o. stemIV .o. stemV .o. stemVI ; 
+! Hat mark (^) to avoid syllable clashes
+define stemI       AA -> %^ || Vowel _ %- ;    ! "antaa > anta-"; 
+define stemII      AA -> %^ || d _ %- ;          ! "luoda > luo-"; 
+define stemIII     l l AA -> l %^ , n n AA -> n %^, r r AA -> r %^, s t AA -> s %^ || _ %- ;         ! "tulla > tul-";
+define stemIV      t AA -> %^ || Vowel _ %-  ;    ! "ruveta > ruve"; 
+define stemV      i t AA -> %^ || _ %-  ;      ! "merkitä > merki-"; 
+define CleanOffHat      %^ -> 0 ;
+define Stemming    stemI .o. stemII .o. stemIII .o. stemIV .o. stemV .o. CleanOffHat ; 
 
 ! -UtU-; kääntä-ytyä > kääntä-ytyä; sopia-utua > sope-utu-a
 ! A and e stay in the end of the stem, i turns into e 
-define UTU        Con [ a a ] -> a  , Con [ e e ] -> e , Con [ ä ä ] -> ä , Con i -> e ||  _ %- UU t UU AA ;
+define UTU     [ a a ] -> a  , [ e e ] -> e , [ ä ä ] -> ä , i -> e || _  %- UU t UU AA ;
 
 ! -AhtA- 
 ! Drop the last vowel
-define AHTA       Vowel -> 0 ||  _ %- AA h t AA AA ; 
+define AHTA       Vowel -> 0 ||  _  %- AA h t AA AA ; 
 
 ! -ile-; Vartalonloppuiset A ja e säilyvät ile-verbinjohdinten edellä
 !
 define ILE        AA -> 0 , i -> e, e e -> e , o o -> o, 
-                    i i -> i, u u -> u, y y -> y ||  _ %- i l l AA ;
+                    i i -> i, u u -> u, y y -> y ||  _  %- i l l AA ;
 
 ! -skele-
-define SKELE        [ a -> i || _ %- s k e l l AA ] ; ! Problematic
-                    ! .o. [ a -> e ||  _ %- s k e l e ] ;
+define SKELE        a -> [ e | i ] || _  %- s k e l l AA ; ! Not predictable              
 
 ! -tta-
-define TTA          a -> o, ä -> e || _ %- t t AA AA ; ! Problematic
+define TTA          a -> o, ä -> [e | ä] || _  %- t t AA AA ; ! Not predictable
 
 ! -aise-
 ! Drop all of the short vowels, and long vowels at the end of the type 4 and 6 verb roots 
-define AISE         Vowel -> 0 || Con _ %- AA i s e ; 
+define AISE         Vowel -> 0 || Con _  %- AA i s t AA ; 
        
 
 define VokaalisoituOne   A -> a, U -> u || $[ a | o | u ] _ ; ! No need to consider compounds
