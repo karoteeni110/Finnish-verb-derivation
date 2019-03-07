@@ -17,16 +17,16 @@ puhua   Derivation ;
 kiehua  Derivation ; 
 väsyä   Derivation ; 
 
-! kulkea  Derivation ;
-! tuntea  Derivation ;
-! hakea   Derivation ;
-! empiä   Derivation ;
-! hyppiä  Derivation ;
-! viipyä  Derivation ;
-! myöntää Derivation ;
-! yltää   Derivation ;
-! kertoa  Derivation ;
-! saattaa Derivation ;
+kulkea  Derivation ;
+tuntea  Derivation ;
+hakea   Derivation ;
+empiä   Derivation ;
+hyppiä  Derivation ;
+viipyä  Derivation ;
+myöntää Derivation ;
+yltää   Derivation ;
+kertoa  Derivation ;
+saattaa Derivation ;
 pitää   Derivation ;
 
 pyrkiä  Derivation ; ! I-vartalo, ~~i~~; 

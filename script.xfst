@@ -21,7 +21,7 @@ define LoppuAvotavu     [ Con AA ] | [ AA ] | [ AA AA ] | [ Con AA AA ] ;
 define FinVerb      [ [Avotavu] | [Umpitavu] ]^<5 [ [ d AA ] | [ AA ] | [ t AA ] | [ l A ] ] ; 
 
 read lexc Derivation.lexc ;
-substitute defined FinVerb for ^GUESSVERB 
+! substitute defined FinVerb for ^GUESSVERB 
 define AllFinVerbs ;
 
 !!!!!
@@ -39,7 +39,7 @@ define weakK        "^WK^" -> j || r _ e          ! kulje-AhtA
                         .o.
                     "^WK^" -> k || [ h | t ] _           ! k stays when proceeded by h or t
                         .o.
-                    "^WK" -> 0 ;                    ! hae-AhtA
+                    "^WK^" -> 0 ;                    ! hae-AhtA
 define weakP        "^WP^" -> m || m _              ! emmi-AhtA
                         .o.
                     "^WP^" -> 0 || p _              ! hypi-AhtA
