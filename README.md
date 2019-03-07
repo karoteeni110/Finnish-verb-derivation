@@ -2,6 +2,8 @@
 
 Finnish verb guesser (Alpha testing V0.0.1)
 
+Disclaimer: This document is under development.
+
 ## The goal
 
 The guesser should produce derivative forms of the input verb.
