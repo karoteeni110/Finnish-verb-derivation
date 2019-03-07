@@ -28,34 +28,41 @@ define AllFinVerbs ;
 !!!!! RULES
 !!!!!
 
-! Mark the grade of stem according to the suffix
+! Mark the weak grade for type 1 verbs with -Ahta, -skele, and -ttA verbs
 ! Partly adapted from Gradation.script (Karttunen, 2004) and ASTEVAIHTELUTYYPIT (KOTUS 2018)
-define weakMark    k -> "^WK^", p -> "^WP^", t -> "^WT^" || _ Vowel AA %- [ AA h t AA | s k e l e | t t AA ] ; 
-                        ! Weak mark for Type 1 verbs
+define weakMark    k -> "^WK^", p -> "^WP^", t -> "^WT^" || \s _ Vowel AA %- [ AA h t AA AA | s k e l l AA | t t AA AA] ; 
+                        ! Weak mark for Type 1 verbs; "sk" "sp" and "st" remains unchanged
                         ! antaa > ant^Weak^aa-AhtA
-define weakK        "^WK^" -> j || r _ e          ! kulje-
+define weakK        "^WK^" -> j || r _ e          ! kulje-AhtA
                         .o.
-                    "^WK^" -> g || n _            ! tunge-
+                    "^WK^" -> g || n _            ! tunge-AhtA
                         .o.
-                    "^WK^" -> k || Con/k _           ! k stays when proceeded by any consonant that is not a "k"
+                    "^WK^" -> k || [ h | t ] _           ! k stays when proceeded by h or t
                         .o.
-                    "^WK" -> 0 ;                    ! hae-
-define weakP        "^WP^" -> m || m _              ! emmi-
+                    "^WK" -> 0 ;                    ! hae-AhtA
+define weakP        "^WP^" -> m || m _              ! emmi-AhtA
                         .o.
-                    "^WP^" -> 0 || p _              ! hypi-
+                    "^WP^" -> 0 || p _              ! hypi-AhtA
                         .o.
-                    "^WP^" -> v ;                  ! viivy-
+                    "^WP^" -> v ;                  ! viivy-AhtA
 
-define WeakT        "^WT^" -> n || n _              ! myönnä-
+define WeakT        [ "^WT^" -> n || n _ ]           ! myönnä-AhtA
                         .o.
-                    "^WT^" -> l || l _              ! yllä-
+                    [ "^WT^" -> l || l _ ]         ! yllä-AhtA
                         .o.
-                    "^WT" -> r || r _               ! kerro-
+                    [ "^WT" -> r || r _ ]              ! kerro-AhtA
                         .o.
-                    "^WT^" -> 0 || t _              ! saata-
+                    [ "^WT^" -> 0 || t _ ]             ! saata-AhtA
                         .o.
-                    "^WT^" -> d ;              ! pidä-
-define WeakGrade    weakMark .o. weakK .o. weakP .o. weakT ;
+                     [ "^WT^" -> d ];              ! pidä-AhtA
+define WeakGrade    weakMark .o. weakK .o. weakP ;! .o. weakT ;
+
+! Strong gradation for type 4 and type 6
+! Applicable for -ttA, -Aise, and -ile suffixes
+define strongGrade   k -> k k , p -> p p, t -> t t, n g -> n k, m m -> m p,
+                    v -> p, d -> t, 0 -> k, h j -> h k || Vowel _ Vowel [ t t AA AA | AA i s t AA | i l l AA] ;
+
+define Gradation WeakGrade .o. strongGrade ;
 
 ! Stemming without gradation;
 ! This is a set of public rules and is applied to all of the verbs;
@@ -65,42 +72,38 @@ define stemII      d AA -> 0 || _ %- ;          ! "luoda > luo-"; V stem
 define stemIII     l l AA -> l || _ %- ;         ! "tulla > tul-"; e-stem
 define stemIV      t AA -> 0 || Vowel _ %-  ;    ! "ruveta > ruve"; supistumavartalo
 define stemV       s t AA -> s || _ %-  ;        ! "nousta > nous-"; e-stem
-define stemVI      i t AA -> i || _ %-  ;      ! "merkitä > merkit-"; e-stem
-define Stemming    stemI .o. stemII .o. stemIII .o. stemIV .o. stemV .o. stemVI ; !
+define stemVI      i t AA -> i || _ %-  ;      ! "merkitä > merki-"; e-stem
+define Stemming    stemI .o. stemII .o. stemIII .o. stemIV .o. stemV .o. stemVI ; 
 
 ! -UtU-; kääntä-ytyä > kääntä-ytyä; sopia-utua > sope-utu-a
 ! A and e stay in the end of the stem, i turns into e 
-define aeiUtU        Con [ a a ] -> a  , Con [ e e ] -> e , Con [ ä ä ] -> ä , Con i -> e ||  _ %- UU t UU AA ;
-
-!!!!!!!!!
-! Exclude ttA-stem; *vahingoitta-utu-a vs. testamentta-utu-a
-! define exUtU        stemI .o.
-!                   [ 0 -> %-NOTPOSSIBLE%- || _ %- UU t UU AA ] ;
-!!!!!!!!!
-
+define UTU        Con [ a a ] -> a  , Con [ e e ] -> e , Con [ ä ä ] -> ä , Con i -> e ||  _ %- UU t UU AA ;
 
 ! -AhtA- 
 ! Drop the last vowel
-define vAhtA       Vowel -> 0 ||  _ %- AA h t AA AA ; 
+define AHTA       Vowel -> 0 ||  _ %- AA h t AA AA ; 
 
 ! -ile-; Vartalonloppuiset A ja e säilyvät ile-verbinjohdinten edellä
 !
-define AeIle        AA -> 0 , i -> e, e e -> e , o o -> o, 
+define ILE        AA -> 0 , i -> e, e e -> e , o o -> o, 
                     i i -> i, u u -> u, y y -> y ||  _ %- i l l AA ;
 
 ! -skele-
-define Skele        [ a -> i || _ %- s k e l a ] ! Problematic
-                    .o. [ a -> e ||  _ %- s k e l e ] ;
+define SKELE        [ a -> i || _ %- s k e l l AA ] ; ! Problematic
+                    ! .o. [ a -> e ||  _ %- s k e l e ] ;
 
 ! -tta-
-! -aise-
+define TTA          a -> o, ä -> e || _ %- t t AA AA ; ! Problematic
 
-!       
+! -aise-
+! Drop all of the short vowels, and long vowels at the end of the type 4 and 6 verb roots 
+define AISE         Vowel -> 0 || Con _ %- AA i s e ; 
+       
 
 define VokaalisoituOne   A -> a, U -> u || $[ a | o | u ] _ ; ! No need to consider compounds
 define VokaalisoituTwo   A -> ä, U -> y ;
-define CleafOffdash      %- -> 0 ;
+define CleanOffdash      %- -> 0 ;
 
-regex AllFinVerbs .o. VokaalisoituOne .o. VokaalisoituTwo .o. WeakGrade .o. Stemming
-                  .o. aeiUtU .o. vAhtA .o. AeIle ! Add suffixes here
-                  .o. CleafOffdash ;
+regex AllFinVerbs .o. VokaalisoituOne .o. VokaalisoituTwo .o. Gradation .o. Stemming
+                  .o. UTU .o. AHTA .o. ILE .o. SKELE .o. TTA .o. AISE
+                  .o. CleanOffdash ;

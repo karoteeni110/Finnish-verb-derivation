@@ -17,6 +17,18 @@ puhua   Derivation ;
 kiehua  Derivation ; 
 väsyä   Derivation ; 
 
+! kulkea  Derivation ;
+! tuntea  Derivation ;
+! hakea   Derivation ;
+! empiä   Derivation ;
+! hyppiä  Derivation ;
+! viipyä  Derivation ;
+! myöntää Derivation ;
+! yltää   Derivation ;
+! kertoa  Derivation ;
+! saattaa Derivation ;
+! pitää   Derivation ;
+
 pyrkiä  Derivation ; ! I-vartalo, ~~i~~; 
 
 häiritä Derivation ; ! itse-verbi, ~~tse~~ 
@@ -49,8 +61,7 @@ LEXICON Ahta
 LEXICON Aise
 :-AistAA   # ;
 
-LEXICON Ele
-:-ellA     # ;
+LEXICON Ile
 :-illA     # ;
 
 LEXICON Skele

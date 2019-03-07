@@ -2,13 +2,11 @@
 
 Finnish verb guesser (Alpha testing V0.0.1)
 
-## My plan
+## The goal
 
-The guesser produces derivative forms of the input verb.
+The guesser should produce derivative forms of the input verb.
 
-E.g.
-
-input:
+E.g. If we input:
 
 ```
 hfst[1]: down antaa  
@@ -22,24 +20,23 @@ annella
 anniskella
 ```
 
-The input verb should be a "basic word" (Fin. _perussana_), i.e. a word that is composed of a single morpheme and have not gone through any derivational change. The output verb is designated to go through one derivational change (Fin. johdin; See [VISK § 306](http://scripta.kotus.fi/visk/sisallys.php?p=306), so they would contain only two morphemes.
+The input verb should be a "basic word" (Fin. _perussana_), i.e. a word that is composed of a single morpheme and have not gone through any derivational change. The output verb is designated to go through one derivational change (Fin. johdin [VISK § 306](http://scripta.kotus.fi/visk/sisallys.php?p=306)), so they would contain only two morphemes.
 
-Unfortunately, this version (010319) yields disappointing results. The derivational forms it yields could exist in principle, but has not been used in real life (See [VISK § 158](http://scripta.kotus.fi/visk/sisallys.php?p=158)), and there are bugs in the script :(. It seems an analyzer is more realistic.
+Unfortunately, this version (010319) yields disappointing results. The derivational forms it yields could exist in principle, but has not been used in real life ([VISK § 158](http://scripta.kotus.fi/visk/sisallys.php?p=158)), and there are bugs in the script :( 
+    
+It seems an analyzer is more realistic.
 
 ## Structure
 
-The lexc script has put several toy words, and added all the five suffixes to them. For example, the lower word for "antaa" are "antaa-AhtAA", "antaa-AistAA", "antaa-ellA", "antaa-illA", "antaa-skellA", "antaa-ttAA" and "antaa-UtUA". This is a simplification; as is mentioned above, not all of those forms exist in real life.
+The lexc script contains several toy words, which are typical in terms of consonant gradation, and are attached with all the five suffixes. For example, the lower word for "antaa" are "antaa-AhtAA", "antaa-AistAA", "antaa-ellA", "antaa-illA", "antaa-skellA", "antaa-ttAA" and "antaa-UtUA". This is a simplification; as is mentioned above, not all of those forms exist in real life.
 
 ! "-ellA" / "-illA" state is problematic.
 
-### Filter the input
+### 1 Filter the input
 
-1. Accept Finnish word
+Accept Finnish word by ruling out impossible syllable combinations:
 
-Ruling out impossible syllable combinations:
-
-```
-
+ ```
 ! Vokaalit ja konsonantit Suomen kielessä
 define Vowel    a | o | u | ä | ö | y | e | i ;
 define Con      b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ;
@@ -47,19 +44,16 @@ define AA       ä | a ;
 
 ! Umpitavut;
 define Umpitavu [ Con Vowel Con ] | [ Con Vowel Con Con ] | [ Con Vowel Vowel Con ] |
-                 [ Vowel Con ] | [ Vowel Con Con ] | [ Vowel Vowel Con ] ;
+            [ Vowel Con ] | [ Vowel Con Con ] | [ Vowel Vowel Con ] ;
 
 ! Avotavut; 
 define Avotavu     [ Con Vowel ] | [ Vowel ] | [ Vowel Vowel ] | [ Con Vowel Vowel ] ;
 
 ! Viimeinen avotavu
 define LoppuAvotavu     [ Con AA ] | [ AA ] | [ AA AA ] | [ Con AA AA ] ;
-
 ```
 
-2. Filter out non-verbs
-
-Ruling out those which do not end with a/ä:
+Filter out non-verbs by ruling out those which do not end with a/ä:
 
 ```
 
@@ -69,7 +63,7 @@ define FinVerb      [ [Avotavu] | [Umpitavu] ]^<5 [ [ d AA ] | [ AA ] | [ t AA ]
 
 ```
 
-### Vowel Harmony
+### 2 Vowel Harmony
 
 The Vowel Harmony in the suffix. 
 
@@ -80,7 +74,7 @@ define VokaalisoituOne   A -> a, U -> u || $[ a | o | u ] _ ; ! We don't conside
 define VokaalisoituTwo   A -> ä, U -> y ;
 ```
 
-### Stemming
+### 3 Stemming
 
 These rules transform the inputs into a rough stem form. Only the  Here the exceptions like "juosta, mennä" are ignored:
 
@@ -97,7 +91,7 @@ These rules transform the inputs into a rough stem form. Only the  Here the exce
 Since grade of the stem depends on the specific suffix, the gradation would be corporated in the conjugation rules.
 
 
-### Conjugate to the stem form according to derivational suffixes
+### 4 Conjugate to the stem form
 
 Derivational suffixes includes -Ahta-, -Aise-, -ele- or -ile-, -skele-, -UtU-. Each lexeme would be conjugated to a specific stem form to adapt the suffix ([Vesa 2006](http://materiaalit.internetix.fi/fi/opintojaksot/8kieletkirjallisuus/aidinkieli/kielioppi/53sanojen_johtaminen)).
 
