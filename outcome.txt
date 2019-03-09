@@ -4,45 +4,132 @@ seisoskella
 seisottaa
 seisoutua
 
-toivoa
+toivahtaa
+toivaista
+toivoskella
+toivottaa
+toivoutua
 
-antaa
+annahtaa
+annattaa
+anneskella
+anniskella
+annottaa
+antaista
+antautua
 
-suttua
+sutahtaa
+sutuskella
+sututtaa
+suttaista
+suttuutua
 
-puhua
+puhahtaa
+puhaista
+puhuskella
+puhuttaa
+puhuutua
 
-kiehua
+kiehahtaa
+kiehaista
+kiehuskella
+kiehuttaa
+kiehuutua
 
-väsyä
+väsähtää
+väsäistä
+väsyskellä
+väsyttää
+väsyytyä
 
-kulkea
+kulahtaa
+kuleskella
+kulettaa
+kulkaista
+kulkeutua
 
-tuntea
+tunnahtaa
+tunneskella
+tunnettaa
+tuntaista
+tunteutua
 
-hakea
+haahtaa
+haeskella
+haettaa
+hakaista
+hakeutua
 
-empiä
+emmähtää
+emmiskellä
+emmittää
+empäistä
+empeytyä
 
-hyppiä
+hypähtää
+hypiskellä
+hypittää
+hyppäistä
+hyppeytyä
 
-viipyä
+viipäistä
+viipyytyä
+viivähtää
+viivyskellä
+viivyttää
 
-myöntää
+myönnähtää
+myönnettää
+myönnäskellä
+myönnättää
+myöntäistä
+myöntäytyä
 
-yltää
+yllähtää
+yllettää
+ylläskellä
+yllättää
+yltäistä
+yltäytyä
 
-kertoa
+kerdahtaa
+kerdoskella
+kerdottaa
+kertaista
+kertoutua
 
-saattaa
+saatahtaa
+saatattaa
+saateskella
+saatiskella
+saatottaa
+saattaista
+saattautua
 
-pitää
+pidähtää
+pidettää
+pidäskellä
+pidättää
+pitäistä
+pitäytyä
 
-pyrkiä
+pyrähtää
+pyriskellä
+pyrittää
+pyrkäistä
+pyrkeytyä
 
-häiritä
+häirähtää
+häiräistä
+häireytyä
+häiriskellä
+häirittää
 
-merkitä
+merkähtää
+merkäistä
+merkeytyä
+merkiskellä
+merkittää
 
 tilkähtää
 tilkäistä
@@ -50,7 +137,9 @@ tilkeytyä
 tilkiskellä
 tilkittää
 
-ilmaista
-
-jylistä
+ilmaisahtaa
+ilmaisaista
+ilmaisskella
+ilmaisttaa
+ilmaisutua
 

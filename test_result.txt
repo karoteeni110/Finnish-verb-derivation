@@ -13,96 +13,279 @@ seisoutua	sei#soutu<N><sg><par>	0.000000
 
 		0.000000
 
-toivoa	toivo<N><sg><par>	0.000000
-toivoa	toivoa<V><act><a><sg>	0.000000
+toivahtaa	toivahtaa+?	inf
+
+toivaista	toivaista+?	inf
+
+toivoskella	toivoskella+?	inf
+
+toivottaa	toivottaa<V><act><a><sg>	0.000000
+toivottaa	toivottaa<V><act><indv><pres><sg3>	0.000000
+
+toivoutua	toivo#utu<N><sg><par>	0.000000
 
 		0.000000
 
-antaa	antaa<V><act><a><sg>	0.000000
-antaa	antaa<V><act><indv><pres><sg3>	0.000000
+annahtaa	annahtaa+?	inf
+
+annattaa	annattaa+?	inf
+
+anneskella	anneskella+?	inf
+
+anniskella	anniskella<V><act><a><sg>	0.000000
+anniskella	anniskella<V><pss><indv><pres><pe4><conneg>	0.000000
+
+annottaa	annottaa+?	inf
+
+antaista	antaista+?	inf
+
+antautua	antautua<V><act><a><sg>	0.000000
 
 		0.000000
 
-suttua	suttu<N><sg><par>	0.000000
+sutahtaa	sutahtaa+?	inf
+
+sutuskella	sutuskella+?	inf
+
+sututtaa	sututtaa+?	inf
+
+suttaista	suttaista+?	inf
+
+suttuutua	suttu#utu<N><sg><par>	0.000000
 
 		0.000000
 
-puhua	puhua<V><act><a><sg>	0.000000
+puhahtaa	puhahtaa<V><act><a><sg>	0.000000
+puhahtaa	puhahtaa<V><act><indv><pres><sg3>	0.000000
+
+puhaista	puhaista+?	inf
+
+puhuskella	puhuskella+?	inf
+
+puhuttaa	puhuttaa<V><act><a><sg>	0.000000
+puhuttaa	puhuttaa<V><act><indv><pres><sg3>	0.000000
+
+puhuutua	puhuutua+?	inf
 
 		0.000000
 
-kiehua	kiehua<V><act><a><sg>	0.000000
+kiehahtaa	kiehahtaa<V><act><a><sg>	0.000000
+kiehahtaa	kiehahtaa<V><act><indv><pres><sg3>	0.000000
+
+kiehaista	kiehaista+?	inf
+
+kiehuskella	kiehuskella+?	inf
+
+kiehuttaa	kiehuttaa<V><act><a><sg>	0.000000
+kiehuttaa	kiehuttaa<V><act><indv><pres><sg3>	0.000000
+
+kiehuutua	kiehuutua+?	inf
 
 		0.000000
 
-väsyä	väsy<N><sg><par>	0.000000
-väsyä	väsyä<V><act><a><sg>	0.000000
+väsähtää	väsähtää<V><act><a><sg>	0.000000
+väsähtää	väsähtää<V><act><indv><pres><sg3>	0.000000
+
+väsäistä	väsäistä+?	inf
+
+väsyskellä	väsyskellä+?	inf
+
+väsyttää	väsyttää<V><act><a><sg>	0.000000
+väsyttää	väsyttää<V><act><indv><pres><sg3>	0.000000
+
+väsyytyä	väsy#yty<N><sg><par>	0.000000
 
 		0.000000
 
-kulkea	kulkea<V><act><a><sg>	0.000000
+kulahtaa	kulahtaa<V><act><a><sg>	0.000000
+kulahtaa	kulahtaa<V><act><indv><pres><sg3>	0.000000
+
+kuleskella	kuleskella+?	inf
+
+kulettaa	kulettaa<V><act><a><sg>	0.000000
+kulettaa	kulettaa<V><act><indv><pres><sg3>	0.000000
+
+kulkaista	kulkaista+?	inf
+
+kulkeutua	kulkeutua<V><act><a><sg>	0.000000
 
 		0.000000
 
-tuntea	tuntea<V><act><a><sg>	0.000000
+tunnahtaa	tunnahtaa+?	inf
+
+tunneskella	tunneskella+?	inf
+
+tunnettaa	tunnettaa+?	inf
+
+tuntaista	tuntaista+?	inf
+
+tunteutua	tunteutua+?	inf
 
 		0.000000
 
-hakea	hakea<N><sg><nom>	0.000000
-hakea	hakea<V><act><a><sg>	0.000000
+haahtaa	haahtaa+?	inf
+
+haeskella	haeskella<V><act><a><sg>	0.000000
+haeskella	haeskella<V><pss><indv><pres><pe4><conneg>	0.000000
+
+haettaa	haettaa<V><act><a><sg>	0.000000
+haettaa	haettaa<V><act><indv><pres><sg3>	0.000000
+
+hakaista	hakaista+?	inf
+
+hakeutua	hake#utu<N><sg><par>	0.000000
+hakeutua	hakeutua<V><act><a><sg>	0.000000
 
 		0.000000
 
-empiä	empiä<V><act><a><sg>	0.000000
+emmähtää	emmähtää+?	inf
+
+emmiskellä	emmiskellä+?	inf
+
+emmittää	emmittää+?	inf
+
+empäistä	empäistä+?	inf
+
+empeytyä	empeytyä+?	inf
 
 		0.000000
 
-hyppiä	hyppiä<V><act><a><sg>	0.000000
+hypähtää	hypähtää<V><act><a><sg>	0.000000
+hypähtää	hypähtää<V><act><indv><pres><sg3>	0.000000
+
+hypiskellä	hypiskellä+?	inf
+
+hypittää	hypittää<V><act><a><sg>	0.000000
+hypittää	hypittää<V><act><indv><pres><sg3>	0.000000
+
+hyppäistä	hyppäistä+?	inf
+
+hyppeytyä	hyppeytyä+?	inf
 
 		0.000000
 
-viipyä	viipyä<V><act><a><sg>	0.000000
+viipäistä	viipäistä+?	inf
+
+viipyytyä	viipyytyä+?	inf
+
+viivähtää	viivähtää<V><act><a><sg>	0.000000
+viivähtää	viivähtää<V><act><indv><pres><sg3>	0.000000
+
+viivyskellä	viivyskellä+?	inf
+
+viivyttää	viivyttää<V><act><a><sg>	0.000000
+viivyttää	viivyttää<V><act><indv><pres><sg3>	0.000000
 
 		0.000000
 
-myöntää	myöntää<V><act><a><sg>	0.000000
-myöntää	myöntää<V><act><indv><pres><sg3>	0.000000
+myönnähtää	myönnähtää+?	inf
+
+myönnettää	myönnettää+?	inf
+
+myönnäskellä	myönnäskellä+?	inf
+
+myönnättää	myönnättää+?	inf
+
+myöntäistä	myöntäistä+?	inf
+
+myöntäytyä	myöntäytyä+?	inf
 
 		0.000000
 
-yltää	yltää<V><act><a><sg>	0.000000
-yltää	yltää<V><act><indv><pres><sg3>	0.000000
+yllähtää	yllähtää+?	inf
+
+yllettää	yllettää+?	inf
+
+ylläskellä	ylläskellä+?	inf
+
+yllättää	yllättää<V><act><a><sg>	0.000000
+yllättää	yllättää<V><act><indv><pres><sg3>	0.000000
+
+yltäistä	yltäistä+?	inf
+
+yltäytyä	yltäytyä+?	inf
 
 		0.000000
 
-kertoa	kerto<N><sg><par>	0.000000
-kertoa	kertoa<V><act><a><sg>	0.000000
+kerdahtaa	kerdahtaa+?	inf
+
+kerdoskella	kerdoskella+?	inf
+
+kerdottaa	kerdottaa+?	inf
+
+kertaista	kertaistaa<V><act><impv><sg2>	0.000000
+kertaista	kertaistaa<V><indv><pres><conneg>	0.000000
+
+kertoutua	kerto#utu<N><sg><par>	0.000000
 
 		0.000000
 
-saattaa	saattaa<V><act><a><sg>	0.000000
-saattaa	saattaa<V><act><indv><pres><sg3>	0.000000
+saatahtaa	saatahtaa+?	inf
+
+saatattaa	saatattaa+?	inf
+
+saateskella	saateskella+?	inf
+
+saatiskella	saatiskella+?	inf
+
+saatottaa	saatottaa+?	inf
+
+saattaista	saattaista+?	inf
+
+saattautua	saattautua+?	inf
 
 		0.000000
 
-pitää	pitää<V><act><a><sg>	0.000000
-pitää	pitää<V><act><indv><pres><sg3>	0.000000
+pidähtää	pidähtää+?	inf
+
+pidettää	pidettää+?	inf
+
+pidäskellä	pidäskellä+?	inf
+
+pidättää	pidättää<V><act><a><sg>	0.000000
+pidättää	pidättää<V><act><indv><pres><sg3>	0.000000
+
+pitäistä	pitäistä+?	inf
+
+pitäytyä	pitäytyä<V><act><a><sg>	0.000000
 
 		0.000000
 
-pyrkiä	pyrkiä<V><act><a><sg>	0.000000
+pyrähtää	pyrähtää<V><act><a><sg>	0.000000
+pyrähtää	pyrähtää<V><act><indv><pres><sg3>	0.000000
+
+pyriskellä	pyriskellä+?	inf
+
+pyrittää	pyrittää+?	inf
+
+pyrkäistä	pyrkäistä+?	inf
+
+pyrkeytyä	pyrkeytyä+?	inf
 
 		0.000000
 
-häiritä	häiritä<V><act><a><sg>	0.000000
-häiritä	häiritä<V><pss><indv><pres><pe4><conneg>	0.000000
+häirähtää	häirähtää+?	inf
+
+häiräistä	häiräistä+?	inf
+
+häireytyä	häireytyä+?	inf
+
+häiriskellä	häiriskellä+?	inf
+
+häirittää	häirittää+?	inf
 
 		0.000000
 
-merkitä	merkittää<V><act><impv><sg2>	0.000000
-merkitä	merkittää<V><indv><pres><conneg>	0.000000
-merkitä	merkitä<V><act><a><sg>	0.000000
-merkitä	merkitä<V><pss><indv><pres><pe4><conneg>	0.000000
+merkähtää	merkähtää+?	inf
+
+merkäistä	merkäistä+?	inf
+
+merkeytyä	merkeytyä+?	inf
+
+merkiskellä	merkiskellä+?	inf
+
+merkittää	merkittää<V><act><a><sg>	0.000000
+merkittää	merkittää<V><act><indv><pres><sg3>	0.000000
 
 		0.000000
 
@@ -118,14 +301,15 @@ tilkittää	tilkittää+?	inf
 
 		0.000000
 
-ilmaista	ilmainen<A><sg><par>	0.000000
-ilmaista	ilmaista<V><act><a><sg>	0.000000
-ilmaista	ilmaista<V><pss><indv><pres><pe4><conneg>	0.000000
+ilmaisahtaa	ilmaisahtaa+?	inf
 
-		0.000000
+ilmaisaista	ilmaisaista+?	inf
 
-jylistä	jylistä<V><act><a><sg>	0.000000
-jylistä	jylistä<V><pss><indv><pres><pe4><conneg>	0.000000
+ilmaisskella	ilmaisskella+?	inf
+
+ilmaisttaa	ilmaisttaa+?	inf
+
+ilmaisutua	ilmais#utu<N><sg><par>	0.000000
 
 		0.000000
 
