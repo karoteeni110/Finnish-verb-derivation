@@ -1,0 +1,131 @@
+seisahtaa	seisahtaa<V><act><a><sg>	0.000000
+seisahtaa	seisahtaa<V><act><indv><pres><sg3>	0.000000
+
+seisaista	seisaista+?	inf
+
+seisoskella	seisoskella<V><act><a><sg>	0.000000
+seisoskella	seisoskella<V><pss><indv><pres><pe4><conneg>	0.000000
+
+seisottaa	seisottaa<V><act><a><sg>	0.000000
+seisottaa	seisottaa<V><act><indv><pres><sg3>	0.000000
+
+seisoutua	sei#soutu<N><sg><par>	0.000000
+
+		0.000000
+
+toivoa	toivo<N><sg><par>	0.000000
+toivoa	toivoa<V><act><a><sg>	0.000000
+
+		0.000000
+
+antaa	antaa<V><act><a><sg>	0.000000
+antaa	antaa<V><act><indv><pres><sg3>	0.000000
+
+		0.000000
+
+suttua	suttu<N><sg><par>	0.000000
+
+		0.000000
+
+puhua	puhua<V><act><a><sg>	0.000000
+
+		0.000000
+
+kiehua	kiehua<V><act><a><sg>	0.000000
+
+		0.000000
+
+väsyä	väsy<N><sg><par>	0.000000
+väsyä	väsyä<V><act><a><sg>	0.000000
+
+		0.000000
+
+kulkea	kulkea<V><act><a><sg>	0.000000
+
+		0.000000
+
+tuntea	tuntea<V><act><a><sg>	0.000000
+
+		0.000000
+
+hakea	hakea<N><sg><nom>	0.000000
+hakea	hakea<V><act><a><sg>	0.000000
+
+		0.000000
+
+empiä	empiä<V><act><a><sg>	0.000000
+
+		0.000000
+
+hyppiä	hyppiä<V><act><a><sg>	0.000000
+
+		0.000000
+
+viipyä	viipyä<V><act><a><sg>	0.000000
+
+		0.000000
+
+myöntää	myöntää<V><act><a><sg>	0.000000
+myöntää	myöntää<V><act><indv><pres><sg3>	0.000000
+
+		0.000000
+
+yltää	yltää<V><act><a><sg>	0.000000
+yltää	yltää<V><act><indv><pres><sg3>	0.000000
+
+		0.000000
+
+kertoa	kerto<N><sg><par>	0.000000
+kertoa	kertoa<V><act><a><sg>	0.000000
+
+		0.000000
+
+saattaa	saattaa<V><act><a><sg>	0.000000
+saattaa	saattaa<V><act><indv><pres><sg3>	0.000000
+
+		0.000000
+
+pitää	pitää<V><act><a><sg>	0.000000
+pitää	pitää<V><act><indv><pres><sg3>	0.000000
+
+		0.000000
+
+pyrkiä	pyrkiä<V><act><a><sg>	0.000000
+
+		0.000000
+
+häiritä	häiritä<V><act><a><sg>	0.000000
+häiritä	häiritä<V><pss><indv><pres><pe4><conneg>	0.000000
+
+		0.000000
+
+merkitä	merkittää<V><act><impv><sg2>	0.000000
+merkitä	merkittää<V><indv><pres><conneg>	0.000000
+merkitä	merkitä<V><act><a><sg>	0.000000
+merkitä	merkitä<V><pss><indv><pres><pe4><conneg>	0.000000
+
+		0.000000
+
+tilkähtää	tilkähtää+?	inf
+
+tilkäistä	tilkäistä+?	inf
+
+tilkeytyä	tilke#yty<N><sg><par>	0.000000
+
+tilkiskellä	tilkiskellä+?	inf
+
+tilkittää	tilkittää+?	inf
+
+		0.000000
+
+ilmaista	ilmainen<A><sg><par>	0.000000
+ilmaista	ilmaista<V><act><a><sg>	0.000000
+ilmaista	ilmaista<V><pss><indv><pres><pe4><conneg>	0.000000
+
+		0.000000
+
+jylistä	jylistä<V><act><a><sg>	0.000000
+jylistä	jylistä<V><pss><indv><pres><pe4><conneg>	0.000000
+
+		0.000000
+

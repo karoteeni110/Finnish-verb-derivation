@@ -21,7 +21,7 @@ define LoppuAvotavu     [ Con AA ] | [ AA ] | [ AA AA ] | [ Con AA AA ] ;
 define FinVerb      [ [Avotavu] | [Umpitavu] ]^<5 [ [ d AA ] | [ AA ] | [ t AA ] | [ l A ] ] ; 
 
 read lexc Derivation.lexc ;
-substitute defined FinVerb for ^GUESSVERB 
+! substitute defined FinVerb for ^GUESSVERB 
 define AllFinVerbs ;
 
 !!!!!
