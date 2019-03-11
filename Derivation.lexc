@@ -40,11 +40,10 @@ jylistä Derivation ;
 
 ^GUESSVERB Derivation ; ! placeholder
 
-!!!!!!!!! trashbin
-! naukata:nauk  Derivation ; ! AA-vartalo, naukkailla, naukua, naukaista
-! ryypätä:ryyp  Derivation ; ! ryypiskellä
-! leipätä:leip  Derivation ; ! non-exist
-!!!!!!!!! 
+naukata  Derivation ; ! AA-vartalo, naukkailla, naukua, naukaista
+ryypätä  Derivation ; ! ryypiskellä
+
+
 
 !!!! Derivation !!!!
 LEXICON Derivation

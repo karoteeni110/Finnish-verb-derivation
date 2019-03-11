@@ -5,6 +5,6 @@ cat outcome.txt | hfst-lookup finntreebank.hfst 1>test_result.txt
 correct=$(cat test_result.txt | grep -F '<V><act><a><sg>' | wc -l )
 all=$(cat outcome.txt | wc -l )
 printf "\nPrecision:\n"
-echo "scale=2 ; $correct / $all" | bc
+echo "scale=3 ; $correct / $all" | bc
 echo "correct / all"
 echo $correct / $all
