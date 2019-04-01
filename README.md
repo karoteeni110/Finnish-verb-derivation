@@ -2,7 +2,7 @@
 
 Finnish verb guesser (Alpha testing V0.0.1)
 
-Disclaimer: This README is a draft, and contains my 
+Disclaimer: This README is a draft and may contain my 
 gibberish. Please see [the final 
 report](https://www.overleaf.com/read/xrgvwyvcmvhg
 ) for information.
